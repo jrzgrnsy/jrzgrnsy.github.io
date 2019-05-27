@@ -255,8 +255,7 @@
 </ul>
 <hr>
 <!--流程-命令-操作-->
-<h3 id="本地搭建"><a href="#本地搭建" class="headerlink" title="本地搭建"></a>本地搭建</h3><p><img src="img/FirstBlood.jpg" alt="本地搭建部分"></p>
-<p><strong>首先利用 apt 安装 Node.js、npm、git，再利用 npm 安装 hexo。</strong></p>
+<h3 id="本地搭建"><a href="#本地搭建" class="headerlink" title="本地搭建"></a>本地搭建</h3><p><div align="center"><br><img src="img/FirstBlood.jpg" alt="本地搭建部分"><br></div><br><strong>首先利用 apt 安装 Node.js、npm、git，再利用 npm 安装 hexo。</strong></p>
 <p><strong><em>在使用命令的过程中如果出现权限不够而拒接操作的情况，可以在命令前面加上 sudo 以临时使用 root 权限，或者直接切换到 root 用户进行操作</em></strong></p>
 <ul>
 <li><p>Node.js安装</p>
@@ -307,15 +306,12 @@
 <p>启动服务后，在浏览器中打开<a href="http://localhost:4000" target="_blank" rel="noopener">http://localhost:4000</a> ，可以看到一个默认主题的博客，在此本地博客已成功搭建，下一步将其同步到GitHub，允许公共访问。</p>
 </li>
 </ul>
-<h3 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h3><p><img src="img/FirstBlood01.jpg" alt="部署到GitHub原理"></p>
-<p><strong>这一部分可以先注册GitHub，再将本地产生的SSH公钥添加到GitHub，接着修改博客配置文件 _config.yml 并安装部署插件，最后将本地文件部署到GitHub。</strong></p>
+<h3 id="部署到GitHub"><a href="#部署到GitHub" class="headerlink" title="部署到GitHub"></a>部署到GitHub</h3><p><div align="center"><br><img src="img/FirstBlood01.jpg" alt="部署到GitHub原理"><br></div><br><strong>这一部分可以先注册GitHub，再将本地产生的SSH公钥添加到GitHub，接着修改博客配置文件 _config.yml 并安装部署插件，最后将本地文件部署到GitHub。</strong></p>
 <ul>
-<li>注册GitHub账号，然后开始一个新的项目或者说创建新的代码仓库（repository）</li>
-</ul>
-<p><img src="img/repository.png" alt="reposity"></p>
-<p>​    在命名代码仓库的过程中，建议与用户名一致，即上图绿色涂鸦部分，同时注意将仓库名后面加上<code>.github.io</code>,这样利于创建成功后博客的访问。</p>
-<ul>
-<li>在本地生成SSH秘钥，并利用公钥在GitHub创建SSH keys</li>
+<li><p>注册GitHub账号，然后开始一个新的项目或者说创建新的代码仓库（repository）<br><div align="center"><br><img src="img/repository.png" alt="reposity"><br></div><br>​    在命名代码仓库的过程中，建议与用户名一致，即上图绿色涂鸦部分，同时注意将仓库名后面加上<code>.github.io</code>,这样利于创建成功后博客的访问。</p>
+</li>
+<li><p>在本地生成SSH秘钥，并利用公钥在GitHub创建SSH keys</p>
+</li>
 </ul>
 <blockquote>
 <p>$ ssh-keygen -t rsa -C  “GitHub注册邮箱”</p>
@@ -325,10 +321,7 @@
 <p>$ cat ~/.ssh/id_rsa.pub</p>
 </blockquote>
 <ul>
-<li>将打印出来的全部内容复制，然后到GitHub个人主页，点击右上角头像的下拉菜单的设置选项，再找到SSH key选项,将内容复制到该处。</li>
-</ul>
-<p><img src="img/key.png" alt="key"></p>
-<ul>
+<li>将打印出来的全部内容复制，然后到GitHub个人主页，点击右上角头像的下拉菜单的设置选项，再找到SSH key选项,将内容复制到该处。<div align="center"><br><img src="img/key.png" alt="key"><br></div></li>
 <li>创建成功后测试ssh是否可以与GitHub通信</li>
 </ul>
 <blockquote>
@@ -344,7 +337,7 @@
 <p>​    执行此命令需要你将目录切换到你所创建的文件夹，此处如果没有安装 vi 编辑器，可以使用 gedit 编辑器，命令为<code>gedit _config.yml</code>。文件内容更改如下：</p>
 <figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">deploy：</span><br><span class="line">   type： git</span><br><span class="line">   repository： git@github.com:***/***.github.io.git</span><br><span class="line">   branch： master</span><br></pre></td></tr></table></figure>
 <p>​    在文件中找到上述代码位置后更改，如若没有相关代码块可在文末自行添加，代码仓库（repository）地址可以在GitHub中找到，如下图中紫圈所示部分，选中ssh（绿圈），而不要选中HTTPS（红圈）。注意在每个参数后面添加一个空格，编辑完成后确认保存了已修改的配置文件。</p>
-<p><img src="img/ssh.png" alt="ssh"></p>
+<p><div align="center"><br><img src="img/ssh.png" alt="ssh"><br></div></p>
 <ul>
 <li>安装部署插件</li>
 </ul>
